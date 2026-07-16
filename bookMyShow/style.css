@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    background: #ffffff;
+    color: #1c1c1c;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 1px solid #eaeaea;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.movie-info {
+    flex: 1;
+    text-align: center;
+    margin-right: 80px; 
+}
+
+.movie-info h1 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.movie-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #888;
+}
+
+.time-slots {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+    align-items: center;
+}
+
+.date-col {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 13px;
+    padding-right: 15px;
+    border-right: 1px solid #ddd;
+}
+
+.date-col .day { color: #888; font-size: 12px; }
+.date-col .date { font-weight: 600; }
+
+.time-btn {
+    background: transparent;
+    border: 1px solid #dcdcdc;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #333;
+    transition: all 0.2s;
+}
+
+.time-btn.active, .time-btn:hover {
+    background: #f3f4f6;
+    border-color: #111;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#seatContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 40px 0;
+    max-width: 600px; 
+}
+
+.seat {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.available {
+    background: #ffffff;
+    border: 1px solid #a0a0a0;
+    color: #333;
+}
+
+.available:hover {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 1px #8b5cf6;
+}
+
+.booked {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    color: transparent; 
+    pointer-events: none;
+    position: relative;
+}
+
+.booked::after {
+    content: '×';
+    color: #a0a0a0;
+    font-size: 16px;
+    position: absolute;
+}
+
+.selected {
+    background: #8b5cf6;
+    border: 1px solid #8b5cf6;
+    color: white;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.screen-wrapper {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screen {
+    width: 400px;
+    height: 45px;
+    background: linear-gradient(to top, #dcb9f9, #ede3fc);
+    border: 2px solid #b78af7;
+    border-bottom: 4px solid #a36cf5;
+    border-radius: 4px;
+    transform: perspective(300px) rotateX(25deg);
+    box-shadow: 0 15px 25px rgba(139, 92, 246, 0.15);
+}
+
+.screen-text {
+    color: #8b5cf6;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 25px;
+}
+
+.legend {
+    display: flex;
+    gap: 30px;
+    margin: 10px 0 50px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.box {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box.best { border: 1px solid #60a5fa; box-shadow: 0 0 10px #93c5fd; background: #eff6ff;}
+.box.available { border: 1px solid #333; }
+.box.occupied { border: 1px solid #e0e0e0; color: #a0a0a0; font-size: 14px; line-height: 1; }
+.box.selected { background: #8b5cf6; border: 1px solid #8b5cf6;}
+
+.booking {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 60px;
+    background: #ffffff;
+    padding: 0;
+}
+
+.booking input {
+    padding: 14px 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    width: 200px;
+}
+
+.booking input:focus {
+    border-color: #8b5cf6;
+}
+
+.booking button {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.booking button:hover {
+    background: #333;
+}

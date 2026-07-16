@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">TheatreAtMyView<span>BY Pushkar</span></div>
+        <div class="movie-info">
+            <h1>Main Vaapas Aaunga</h1>
+            <p>1 Jul, 01:35 PM at Cinepolis Grand View High Street, Gurugram</p>
+        </div>
+    </div>
+
+    <div class="time-slots">
+        <div class="date-col">
+            <span class="day">Wed</span>
+            <span class="date">01 Jul</span>
+        </div>
+        <button class="time-btn active">01:35 PM</button>
+        <button class="time-btn">04:55 PM</button>
+        <button class="time-btn">07:00 PM</button>
+        <button class="time-btn">09:00 PM</button>
+        <button class="time-btn">10:50 PM</button>
+    </div>
+
+    <div class="container">
+        
+        <div id="seatContainer"></div>
+
+        <div class="screen-wrapper">
+            <div class="screen"></div>
+            <div class="screen-text">SCREEN THIS WAY</div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><span class="box best"></span>Best Seats ⓘ</div>
+            <div class="legend-item"><span class="box available"></span>Available</div>
+            <div class="legend-item"><span class="box occupied">×</span>Occupied</div>
+            <div class="legend-item"><span class="box selected"></span>Selected</div>
+        </div>
+
+        <div class="booking">
+            <input id="name" placeholder="Name">
+            <input id="email" placeholder="Email">
+            <button onclick="bookSeat()">Book Ticket</button>
+            <div id="message"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
